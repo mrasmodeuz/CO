@@ -1,1 +1,1 @@
-# CO
+# company outline 
