@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Outline - IT Infrastructure Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-900 to-pink-900">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+
+            <!-- Logo & Brand -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <!-- Rotating Logo -->
+                <div
+                    class="w-12 h-12 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center transition-transform duration-700 group-hover:rotate-[360deg]">
+                    <img src="./Images/COM LOGO BG.png" alt="Logo" class="w-full h-full object-contain" />
+                </div>
+                <!-- Brand Text -->
+                <span
+                    class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-400">
+                    CompanyOutline
+                </span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <div class="hidden md:flex space-x-6 text-white">
+                <a href="#home" class="hover:text-red-500 transition-colors duration-300">Home</a>
+                <a href="#services" class="hover:text-red-500 transition-colors duration-300">Services</a>
+                <a href="#about" class="hover:text-red-500 transition-colors duration-300">About</a>
+                <a href="#portfolio" class="hover:text-red-500 transition-colors duration-300">Portfolio</a>
+                <a href="#contact" class="hover:text-red-500 transition-colors duration-300">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section pt-20 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-8 mb-lg-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800">Innovative <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Digital
+                            Solutions</span></h1>
+                    <p class="text-lg text-gray-600 mb-6">We craft cutting-edge software solutions to transform your
+                        business and enhance your digital presence.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact"
+                            class="btn btn-primary bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Get
+                            Started</a>
+                        <a href="#services"
+                            class="btn btn-outline-primary border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-6 py-3 rounded-full shadow transition-all duration-300">Our
+                            Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image relative">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Software Development" class="rounded-xl shadow-2xl w-full h-auto">
+                        <div class="absolute -bottom-6 -right-6 bg-indigo-100 rounded-xl p-4 shadow-lg w-2/3 z-10">
+                            <h4 class="font-bold text-indigo-800 mb-2">Trusted by 100+ Clients</h4>
+                            <p class="text-sm text-gray-600">Across various industries worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full -z-10 opacity-10">
+            <div class="absolute top-20 left-20 w-64 h-64 rounded-full bg-purple-400 blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-indigo-400 blur-3xl"></div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-8 bg-gray-100">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h3 class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Trusted by industry leaders
+                </h3>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-6 col-md-3 col-lg-2 mb-4">
+                    <img src="./Images/AR Collection.jpg" alt="Client Logo"
+                        class="w-32 h-32 rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4">
+                    <img src="./Images/Zyncrypt.jpg" alt="Client Logo"
+                        class="w-32 h-32 rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4">
+                    <img src="./Images/Cozy Nest Homes.png" alt="Client Logo"
+                        class="w-32 h-32 rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4">
+                    <img src="./Images/Thread Tech Junction.png" alt="Client Logo"
+                        class="w-32 h-32 rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4">
+                    <img src="./Images/AdornHerElegance.png" alt="Client Logo"
+                        class="w-32 h-32 rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Our Services</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Comprehensive IT Solutions</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 mt-4">We offer end-to-end digital solutions to help your
+                    business thrive in the digital landscape.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="./Custom Software Development.html">
+                        <div
+                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-indigo-500 h-full">
+                            <div
+                                class="icon-box w-14 h-14 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+                                <i class="fas fa-code text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Custom Software Development</h3>
+                            <p class="text-gray-600">Tailored software solutions designed to meet your specific business
+                                requirements and streamline operations.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="./Android App Development Website.html">
+                        <div
+                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-purple-500 h-full">
+                            <div
+                                class="icon-box w-14 h-14 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+                                <i class="fab fa-android text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Android App Development</h3>
+                            <p class="text-gray-600">High-performance mobile applications built with cutting-edge
+                                technologies for seamless user experiences.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="./Web Applications Website.html">
+                        <div
+                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-blue-500 h-full">
+                            <div
+                                class="icon-box w-14 h-14 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                                <i class="fas fa-globe text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Web Applications</h3>
+                            <p class="text-gray-600">Scalable and secure web applications that drive engagement and
+                                deliver
+                                measurable results.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="./UX Design Website.html">
+                        <div
+                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-pink-500 h-full">
+                            <div
+                                class="icon-box w-14 h-14 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+                                <i class="fas fa-paint-brush text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">UI/UX Design</h3>
+                            <p class="text-gray-600">User-centric designs that enhance usability and create memorable
+                                digital experiences.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="./SEO & Digital Marketing Website.html">
+                        <div
+                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 h-full">
+                            <div
+                                class="icon-box w-14 h-14 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+                                <i class="fas fa-search-dollar text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">SEO & Digital Marketing</h3>
+                            <p class="text-gray-600">Data-driven strategies to increase your online visibility and drive
+                                qualified traffic to your business.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="./Cybersecurity Website.html">
+                        <div
+                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-red-500 h-full">
+                            <div
+                                class="icon-box w-14 h-14 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
+                                <i class="fas fa-shield-alt text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Cybersecurity</h3>
+                            <p class="text-gray-600">Comprehensive security solutions to protect your digital assets
+                                from
+                                evolving threats.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#contact"
+                    class="btn btn-outline-primary border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full shadow transition-all duration-300">Get
+                    All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-8 mb-lg-0">
+                    <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">About Us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">Your Trusted IT Solutions Partner
+                    </h2>
+                    <p class="text-gray-600 mb-4">Headquartered in Kochi, Company Outline is a leading IT infrastructure
+                        solutions provider, specializing in a wide range of services to enhance your digital experience.
+                    </p>
+                    <p class="text-gray-600 mb-6">We are committed to understanding the evolving needs of our clients
+                        and delivering innovative, user-centric, and accessible technology solutions that drive business
+                        growth.</p>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold text-gray-800">Expert Team</h4>
+                                    <p class="text-gray-600 text-sm">Certified professionals with industry expertise</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold text-gray-800">Quality Assurance</h4>
+                                    <p class="text-gray-600 text-sm">Rigorous testing for flawless performance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold text-gray-800">Support 24/7</h4>
+                                    <p class="text-gray-600 text-sm">Round-the-clock technical support</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold text-gray-800">Competitive Pricing</h4>
+                                    <p class="text-gray-600 text-sm">Cost-effective solutions without compromise</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Our Team" class="rounded-xl shadow-lg w-full">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg w-2/3 z-10">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-lg p-3">
+                                    <i class="fas fa-award text-indigo-600 text-2xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-800">5+ Years Experience</h4>
+                                    <p class="text-sm text-gray-600">Delivering excellence since 2018</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-white">
+        <div class="container">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Our Work</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Featured Projects</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 mt-4">Explore some of our successful projects across various
+                    industries.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+                        <div class="portfolio-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 1"
+                                class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                            <div
+                                class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <div>
+                                    <h3 class="text-white font-bold text-xl mb-2">E-commerce Platform</h3>
+                                    <p class="text-indigo-200">Custom-built online store with advanced features</p>
+                                    <a href="#"
+                                        class="mt-3 inline-flex items-center text-white hover:text-indigo-300 transition-colors">
+                                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+                        <div class="portfolio-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80"
+                                alt="Project 2"
+                                class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                            <div
+                                class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <div>
+                                    <h3 class="text-white font-bold text-xl mb-2">Financial Analytics Dashboard</h3>
+                                    <p class="text-indigo-200">Real-time data visualization for financial institutions
+                                    </p>
+                                    <a href="#"
+                                        class="mt-3 inline-flex items-center text-white hover:text-indigo-300 transition-colors">
+                                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+                        <div class="portfolio-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80"
+                                alt="Project 3"
+                                class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                            <div
+                                class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <div>
+                                    <h3 class="text-white font-bold text-xl mb-2">Healthcare Management System</h3>
+                                    <p class="text-indigo-200">Comprehensive solution for hospital administration</p>
+                                    <a href="#"
+                                        class="mt-3 inline-flex items-center text-white hover:text-indigo-300 transition-colors">
+                                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#"
+                    class="btn btn-outline-primary border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full shadow transition-all duration-300">View
+                    All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gradient-to-r from-indigo-900 to-purple-800 text-white">
+        <div class="container">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold text-indigo-300 uppercase tracking-wider">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">What Our Clients Say</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Testimonial 1 -->
+                            <div class="carousel-item active">
+                                <div class="testimonial-item text-center px-4 py-8">
+                                    <div
+                                        class="testimonial-content bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
+                                        <div class="quote-icon text-indigo-300 text-4xl mb-6">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                        <p class="text-lg text-white mb-6">"Company Outline transformed our digital
+                                            presence with their exceptional web development and SEO services. Our online
+                                            traffic increased by 300% within just three months of working with them."
+                                        </p>
+                                        <div class="client-info">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client"
+                                                class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-indigo-300">
+                                            <h4 class="font-bold text-white">Rajesh Kumar</h4>
+                                            <p class="text-indigo-200">CEO, TechSolutions India</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="carousel-item">
+                                <div class="testimonial-item text-center px-4 py-8">
+                                    <div
+                                        class="testimonial-content bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
+                                        <div class="quote-icon text-indigo-300 text-4xl mb-6">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                        <p class="text-lg text-white mb-6">"The custom software solution developed by
+                                            Company Outline has streamlined our operations significantly. Their team
+                                            understood our requirements perfectly and delivered beyond expectations."
+                                        </p>
+                                        <div class="client-info">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client"
+                                                class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-indigo-300">
+                                            <h4 class="font-bold text-white">Priya Nair</h4>
+                                            <p class="text-indigo-200">Director, RetailChain</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="carousel-item">
+                                <div class="testimonial-item text-center px-4 py-8">
+                                    <div
+                                        class="testimonial-content bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
+                                        <div class="quote-icon text-indigo-300 text-4xl mb-6">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                        <p class="text-lg text-white mb-6">"Their cybersecurity team implemented robust
+                                            protection measures for our financial platform. We've had zero security
+                                            breaches since deployment, giving us and our customers peace of mind."</p>
+                                        <div class="client-info">
+                                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client"
+                                                class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-indigo-300">
+                                            <h4 class="font-bold text-white">Arun Menon</h4>
+                                            <p class="text-indigo-200">CTO, FinSecure</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-8 mb-lg-0">
+                    <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Contact Us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">Get In Touch</h2>
+                    <p class="text-gray-600 mb-6">Have a project in mind or want to learn more about our services? Reach
+                        out to us and our team will get back to you promptly.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Our Office</h4>
+                                <p class="text-gray-600">Kochi, Kerala, India</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Email Us</h4>
+                                <p class="text-gray-600">info@companyoutline.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Call Us</h4>
+                                <p class="text-gray-600">+91 9526396523</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-800 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                    placeholder="Enter your name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                    placeholder="Enter your email">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                    placeholder="What's this about?">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="5"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                    placeholder="Tell us about your project"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">Send
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-8 mb-lg-0">
+                    <a href="#"
+                        class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300 mb-4 inline-block">Company<span
+                            class="text-white">Outline</span></a>
+                    <p class="text-gray-400 mb-4">Leading IT infrastructure solutions provider headquartered in Kochi,
+                        delivering innovative technology solutions to enhance your digital experience.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
