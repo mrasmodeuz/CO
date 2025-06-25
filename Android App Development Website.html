@@ -4,183 +4,580 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Android App Development</title>
+  <title>Android App Development | ZyranovAI</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <style>
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
-
-    @keyframes zoomIn {
-      0% {
-        transform: scale(0.9);
-        opacity: 0;
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #10b981, #059669);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-
-    .fade-in-up {
-      animation: fadeInUp 1s ease-out forwards;
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-
-    .zoom-in {
-      animation: zoomIn 0.8s ease-out forwards;
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
     }
-
-    .img-animate {
-      opacity: 0;
-      transform: scale(0.95);
-      animation: zoomIn 1s ease-out forwards;
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
     }
-
-    .img-animate img {
-      transition: transform 0.5s ease;
+    
+    .pulse {
+      animation: pulse 2s infinite;
     }
-
-    .img-animate:hover img {
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .gradient-border {
+      position: relative;
+      border-radius: 1rem;
+    }
+    
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #10b981, #059669, #10b981);
+      background-size: 200% 200%;
+      border-radius: inherit;
+      z-index: -1;
+      animation: gradient 3s ease infinite;
+    }
+    
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .hover-grow {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-grow:hover {
       transform: scale(1.05);
+    }
+    
+    .service-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .service-icon {
+      transform: rotate(15deg) scale(1.1);
+    }
+    
+    .android-pattern {
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 20%);
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .tech-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .tech-icon:hover {
+      transform: scale(1.2);
     }
   </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Navigation -->
-  <nav class="bg-gradient-to-r from-blue-900 to-pink-900">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="./index.html" class="flex items-center space-x-3 group">
-        <div class="w-12 h-12 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center transition-transform duration-[1000ms] ease-in-out group-hover:rotate-[360deg]">
-          <img src="./Images/COM LOGO BG.png" alt="Logo" class="w-full h-full object-contain" />
-        </div>
-        <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-400">
-          CompanyOutline
-        </span>
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="./index.html" class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">Z</div>
+        <span class="text-2xl font-bold gradient-text">ZyranovAI</span>
       </a>
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8 font-medium">
+          <li><a href="./index.html" class="hover:text-green-600 transition-colors">Home</a></li>
+          <li><a href="./index.html#services" class="hover:text-green-600 transition-colors">Services</a></li>
+          <li><a href="./index.html#portfolio" class="hover:text-green-600 transition-colors">Portfolio</a></li>
+          <li><a href="./index.html#contact" class="hover:text-green-600 transition-colors">Contact</a></li>
+          <li><a href="./index.html#contact" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors">Get Started</a></li>
+        </ul>
+      </nav>
+      <button class="md:hidden text-gray-800 focus:outline-none" id="menu-toggle">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
     </div>
-  </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg animate__animated animate__fadeInDown">
+      <ul class="space-y-4">
+        <li><a href="./index.html" class="block hover:text-green-600 transition-colors">Home</a></li>
+        <li><a href="./index.html#services" class="block hover:text-green-600 transition-colors">Services</a></li>
+        <li><a href="./index.html#portfolio" class="block hover:text-green-600 transition-colors">Portfolio</a></li>
+        <li><a href="./index.html#contact" class="block hover:text-green-600 transition-colors">Contact</a></li>
+        <li><a href="./index.html#contact" class="block bg-green-600 text-white px-6 py-2 rounded-full text-center hover:bg-green-700 transition-colors">Get Started</a></li>
+      </ul>
+    </div>
+  </header>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-green-600 to-emerald-500 text-white py-16 md:py-20">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 zoom-in">Android App Development</h1>
-      <p class="text-md sm:text-lg md:text-xl max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.3s;">
-        High-performance mobile applications built with cutting-edge technologies for seamless user experiences.
-      </p>
+  <section class="relative overflow-hidden android-pattern">
+    <!-- Background Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-r from-green-700 to-emerald-600 opacity-95 z-0"></div>
+    <!-- Pattern Overlay -->
+    <div class="absolute inset-0 opacity-10 z-0 overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1470&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-4 py-28 md:py-36 relative z-10">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white" data-aos="fade-up">
+          Android <span class="gradient-text">App Development</span>
+        </h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="100">
+          High-performance mobile applications built with cutting-edge technologies for seamless user experiences.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="./index.html#contact" class="bg-white text-green-700 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors hover-grow">
+            Get Free Consultation
+          </a>
+          <a href="#features" class="bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-green-700 transition-colors hover-grow">
+            Explore Features
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute bottom-10 left-1/4 w-16 h-16 rounded-full bg-green-500 opacity-20 animate-pulse floating" style="animation-delay: 0.5s;"></div>
+    <div class="absolute top-20 right-1/4 w-24 h-24 rounded-full bg-emerald-500 opacity-20 animate-pulse floating" style="animation-delay: 1s;"></div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-6 rounded-xl bg-gray-50 hover-grow" data-aos="fade-up">
+          <div class="text-3xl font-bold text-green-600 mb-2">500+</div>
+          <div class="text-gray-600">Apps Developed</div>
+        </div>
+        <div class="p-6 rounded-xl bg-gray-50 hover-grow" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-3xl font-bold text-green-600 mb-2">4.8★</div>
+          <div class="text-gray-600">Average Rating</div>
+        </div>
+        <div class="p-6 rounded-xl bg-gray-50 hover-grow" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-3xl font-bold text-green-600 mb-2">50M+</div>
+          <div class="text-gray-600">Downloads</div>
+        </div>
+        <div class="p-6 rounded-xl bg-gray-50 hover-grow" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-3xl font-bold text-green-600 mb-2">24/7</div>
+          <div class="text-gray-600">Support</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Features Heading -->
-  <div class="text-center items-center mt-12 px-4">
-    <h1 class="text-2xl sm:text-3xl font-semibold fade-in-up" style="animation-delay: 0.4s;">What We Offer</h1>
-  </div>
-
   <!-- Features Section -->
-  <div class="space-y-12 my-10">
-
-    <!-- Feature 1 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 sm:px-6 md:px-8 items-center rounded-xl bg-white shadow hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 fade-in-up" style="animation-delay: 0.5s;">
-      <div class="h-64 md:h-80 lg:h-96 w-full img-animate">
-        <img src="https://t4.ftcdn.net/jpg/02/14/36/43/360_F_214364367_ybIaCyV7swPGFwA231CGoy0sMlVJZSxO.jpg" alt="Native & Hybrid Apps" class="w-full h-full object-cover rounded-t-md md:rounded-l-xl md:rounded-t-none">
-      </div>
-      <div class="text-justify px-4 sm:px-6 md:px-8 py-6 space-y-4">
-        <h2 class="text-center text-xl sm:text-2xl font-semibold text-purple-600">Native & Hybrid Apps</h2>
-        <p>
-          We specialize in building both native Android applications and hybrid mobile solutions, tailored to meet the specific needs of our clients...
+  <section id="features" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Android Development Expertise</h2>
+        <p class="max-w-2xl mx-auto text-gray-600">
+          We build high-quality Android applications that deliver exceptional user experiences
         </p>
-        <ul class="list-disc list-inside text-sm md:text-base text-gray-700 space-y-1">
-          <li>Built using official Android SDK (Java/Kotlin).</li>
-          <li>High performance and low latency.</li>
-          <li>Access to full device features (camera, GPS, sensors).</li>
-          <li>Better UI/UX with native components.</li>
-          <li>Enhanced security and OS-level integration.</li>
-          <li>Hybrid support: Flutter & React Native.</li>
-          <li>One codebase for Android & iOS.</li>
-          <li>Cost-effective with wide reach.</li>
-          <li>Fast development & updates.</li>
-        </ul>
+      </div>
+      
+      <!-- Feature 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+        <div class="feature-card bg-white p-6 rounded-xl" data-aos="fade-right">
+          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-6 service-icon">
+            <i class="fab fa-android text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Native & Hybrid Apps</h3>
+          <p class="text-gray-600 mb-4">
+            We specialize in building both native Android applications and hybrid mobile solutions, tailored to meet the specific needs of our clients.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Built using official Android SDK (Java/Kotlin)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>High performance and low latency</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Access to full device features (camera, GPS, sensors)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Hybrid support: Flutter & React Native</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-card overflow-hidden rounded-xl" data-aos="fade-left" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1470&auto=format&fit=crop" 
+               alt="Native & Hybrid Apps" 
+               class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105">
+        </div>
+      </div>
+      
+      <!-- Feature 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+        <div class="feature-card overflow-hidden rounded-xl order-1 md:order-2" data-aos="fade-right">
+          <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1470&auto=format&fit=crop" 
+               alt="Optimized Performance" 
+               class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105">
+        </div>
+        <div class="feature-card bg-white p-6 rounded-xl order-2 md:order-1" data-aos="fade-left" data-aos-delay="100">
+          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-6 service-icon">
+            <i class="fas fa-tachometer-alt text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Optimized Performance</h3>
+          <p class="text-gray-600 mb-4">
+            We prioritize performance optimization at every stage of Android app development. Our applications are engineered to deliver fast load times and smooth interactions.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Fast load times with efficient resource management</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Smooth animations and transitions</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Minimal battery consumption</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Compatibility across Android versions</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Feature 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="feature-card bg-white p-6 rounded-xl" data-aos="fade-right">
+          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-6 service-icon">
+            <i class="fab fa-google-play text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Play Store Deployment</h3>
+          <p class="text-gray-600 mb-4">
+            We provide end-to-end support for deploying your application to the Google Play Store, ensuring maximum visibility and downloads.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>App signing and secure build preparation</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Store listing optimization (ASO)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Compliance with Play Store policies</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+              <span>Update management and version control</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-card overflow-hidden rounded-xl" data-aos="fade-left" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1374&auto=format&fit=crop" 
+               alt="Play Store Deployment" 
+               class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105">
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Feature 2 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 sm:px-6 md:px-8 items-center rounded-xl bg-white shadow hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 fade-in-up" style="animation-delay: 0.6s;">
-      <div class="text-justify px-4 sm:px-6 md:px-8 py-6 space-y-4 order-2 md:order-1">
-        <h2 class="text-center text-xl sm:text-2xl font-semibold text-purple-600">Optimized Performance</h2>
-        <p>
-          We prioritize performance optimization at every stage of Android app development. Our applications are engineered to deliver fast load times...
+  <!-- Technologies Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Technology Stack</h2>
+        <p class="max-w-2xl mx-auto text-gray-600">
+          We use modern technologies to build robust Android applications
         </p>
-        <ul class="list-disc list-inside space-y-1 text-sm md:text-base px-2">
-          <li><strong>Fast Load Times:</strong> Immediate access to features.</li>
-          <li><strong>Smooth Interactions:</strong> Non-blocking UI/UX flow.</li>
-          <li><strong>Efficient Resource Usage:</strong> Battery & CPU optimized.</li>
-          <li><strong>Hardware Acceleration:</strong> GPU-accelerated animations.</li>
-          <li><strong>Cross-Device Compatibility:</strong> Broad device testing.</li>
-        </ul>
       </div>
-      <div class="h-64 md:h-80 lg:h-96 w-full order-1 md:order-2 img-animate">
-        <img src="https://cdn.shopify.com/s/files/1/0817/7988/4088/articles/3H5vNWobgR1ImpDoeCBYk7_aaa3097c-eb7b-4f3d-9229-884c79b793a6.jpg?v=1719389024" alt="Optimized Performance" class="w-full h-full object-cover rounded-b-md md:rounded-r-xl md:rounded-b-none">
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div class="bg-gray-50 p-6 rounded-xl flex flex-col items-center tech-icon" data-aos="zoom-in">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" class="w-16 h-16 mb-4">
+          <span class="font-medium">Android</span>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl flex flex-col items-center tech-icon" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" class="w-16 h-16 mb-4">
+          <span class="font-medium">Kotlin</span>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl flex flex-col items-center tech-icon" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-16 h-16 mb-4">
+          <span class="font-medium">Java</span>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl flex flex-col items-center tech-icon" data-aos="zoom-in" data-aos-delay="300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="w-16 h-16 mb-4">
+          <span class="font-medium">Flutter</span>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl flex flex-col items-center tech-icon" data-aos="zoom-in" data-aos-delay="400">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="w-16 h-16 mb-4">
+          <span class="font-medium">Firebase</span>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl flex flex-col items-center tech-icon" data-aos="zoom-in" data-aos-delay="500">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" class="w-16 h-16 mb-4">
+          <span class="font-medium">React Native</span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Feature 3 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 sm:px-6 md:px-8 items-center rounded-xl bg-white shadow hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 fade-in-up" style="animation-delay: 0.7s;">
-      <div class="h-64 md:h-80 lg:h-96 w-full img-animate">
-        <img src="https://www.shutterstock.com/shutterstock/videos/1029362564/thumb/1.jpg?ip=x480" alt="Playstore Deployment" class="w-full h-full object-cover rounded-t-md md:rounded-l-xl md:rounded-t-none">
-      </div>
-      <div class="text-justify px-4 sm:px-6 md:px-8 py-6 space-y-4">
-        <h2 class="text-center text-xl sm:text-2xl font-semibold text-purple-600">Playstore Deployment</h2>
-        <p>
-          We provide end-to-end support for deploying your application to the Google Play Store, including app signing, preparing optimized release builds...
+  <!-- Process Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Development Process</h2>
+        <p class="max-w-2xl mx-auto text-gray-600">
+          A structured approach to deliver high-quality Android applications
         </p>
-        <ul class="list-disc list-inside text-sm md:text-base space-y-1 px-2">
-          <li><strong>App Signing & Secure Builds</strong></li>
-          <li><strong>Store Listing Optimization</strong></li>
-          <li><strong>Compliance with Play Policies</strong></li>
-          <li><strong>Timely Submissions & Updates</strong></li>
-          <li><strong>Boosted App Visibility</strong></li>
-        </ul>
+      </div>
+      
+      <div class="relative">
+        <!-- Timeline -->
+        <div class="hidden md:block absolute left-1/2 h-full w-1 bg-green-200 transform -translate-x-1/2"></div>
+        
+        <!-- Process Steps -->
+        <div class="space-y-12 md:space-y-16">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col md:flex-row items-center" data-aos="fade-up">
+            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+              <h3 class="text-xl font-semibold text-green-600 mb-2">Discovery & Planning</h3>
+              <p class="text-gray-600">
+                We analyze your requirements and create a detailed project roadmap.
+              </p>
+            </div>
+            <div class="hidden md:block w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center mx-auto z-10">
+              1
+            </div>
+            <div class="md:w-1/2 md:pl-12">
+              <div class="bg-white p-6 rounded-xl shadow-md hover-grow">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Discovery Phase" 
+                     class="w-full h-48 object-cover rounded-lg">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="relative flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 order-last md:text-left">
+              <h3 class="text-xl font-semibold text-green-600 mb-2">UI/UX Design</h3>
+              <p class="text-gray-600">
+                We create intuitive UI/UX designs and interactive prototypes for your feedback.
+              </p>
+            </div>
+            <div class="hidden md:block w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center mx-auto z-10">
+              2
+            </div>
+            <div class="md:w-1/2 md:pl-12 order-first md:order-none">
+              <div class="bg-white p-6 rounded-xl shadow-md hover-grow">
+                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" 
+                     alt="Design Phase" 
+                     class="w-full h-48 object-cover rounded-lg">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="relative flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+              <h3 class="text-xl font-semibold text-green-600 mb-2">Development</h3>
+              <p class="text-gray-600">
+                Our expert developers build your solution using modern technologies and best practices.
+              </p>
+            </div>
+            <div class="hidden md:block w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center mx-auto z-10">
+              3
+            </div>
+            <div class="md:w-1/2 md:pl-12">
+              <div class="bg-white p-6 rounded-xl shadow-md hover-grow">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" 
+                     alt="Development Phase" 
+                     class="w-full h-48 object-cover rounded-lg">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="relative flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 order-last md:text-left">
+              <h3 class="text-xl font-semibold text-green-600 mb-2">Testing & Deployment</h3>
+              <p class="text-gray-600">
+                Rigorous testing ensures quality before we deploy your solution to production.
+              </p>
+            </div>
+            <div class="hidden md:block w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center mx-auto z-10">
+              4
+            </div>
+            <div class="md:w-1/2 md:pl-12 order-first md:order-none">
+              <div class="bg-white p-6 rounded-xl shadow-md hover-grow">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Testing Phase" 
+                     class="w-full h-48 object-cover rounded-lg">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- CTA -->
-  <section class="bg-green-700 text-white py-12 text-center fade-in-up" style="animation-delay: 0.8s;">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-4">Need a Custom Android App?</h2>
-      <p class="mb-6">From concept to code, we bring your ideas to life with reliable, scalable mobile solutions.</p>
-      <a href="./index.html#contact" class="bg-white text-green-700 font-semibold px-6 py-3 rounded-full shadow transform hover:scale-105 hover:bg-gray-200 transition-transform duration-300">
-        Let's Build Your App
-      </a>
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-green-700 to-emerald-600 text-white py-16 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10" style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Build Your Android App?</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        Let's discuss how we can create the perfect mobile solution for your business needs.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="./index.html#contact" class="bg-white text-green-700 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors hover-grow pulse">
+          Get Started Today
+        </a>
+        <a href="tel:+919526396523" class="bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-green-700 transition-colors hover-grow">
+          <i class="fas fa-phone-alt mr-2"></i> Call Us Now
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-6">
-    <div class="max-w-6xl mx-auto px-4 text-center text-sm sm:text-base">
-      &copy; 2025 Company Outline. All rights reserved.
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="./index.html" class="flex items-center space-x-2 mb-4">
+            <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">Z</div>
+            <span class="text-xl font-bold gradient-text">ZyranovAI</span>
+          </a>
+          <p class="text-gray-400 mb-4">
+            Leading mobile app development company delivering innovative solutions.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="./Android App Development Website.html" class="text-gray-400 hover:text-white transition-colors">Android Development</a></li>
+            <li><a href="./Custom Software Development.html" class="text-gray-400 hover:text-white transition-colors">Custom Software</a></li>
+            <li><a href="./Web Applications Website.html" class="text-gray-400 hover:text-white transition-colors">Web Applications</a></li>
+            <li><a href="./UX Design Website.html" class="text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
+            <li><a href="./Cybersecurity Website.html" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="./index.html#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="./index.html#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="./index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-500"></i>
+              <span class="text-gray-400">Kochi, Kerala, India</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-3 text-green-500"></i>
+              <span class="text-gray-400">info@zyranovai.com</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone-alt mt-1 mr-3 text-green-500"></i>
+              <span class="text-gray-400">+91 9526396523</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+        <p>&copy; 2023 ZyranovAI. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-colors duration-300 opacity-0 invisible">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/7907328522" target="_blank"
-   class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110 animate-bounce">
-  <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16.002 2.005C8.823 2.005 2.998 7.829 2.998 15.007a12.87 12.87 0 001.705 6.49L2 30l8.79-2.318a12.93 12.93 0 005.212 1.095h.001c7.178 0 13.002-5.824 13.002-13.002s-5.824-13.002-13.002-13.002zm0 23.997a11.92 11.92 0 01-5.677-1.45l-.406-.231-5.218 1.377 1.393-5.084-.263-.423A11.924 11.924 0 014.001 15.01c0-6.618 5.383-12.001 12.001-12.001S28.002 8.392 28.002 15.01 22.619 26.002 16.002 26.002zm6.31-9.471c-.346-.174-2.043-1.008-2.361-1.123-.317-.115-.547-.173-.777.173-.23.346-.892 1.122-1.093 1.35-.2.23-.4.26-.747.087-.347-.174-1.464-.539-2.788-1.72-1.03-.918-1.725-2.048-1.926-2.394-.2-.347-.021-.535.152-.707.156-.155.346-.4.519-.6.174-.2.23-.347.347-.578.115-.23.058-.433-.029-.606-.086-.173-.777-1.87-1.064-2.556-.278-.669-.56-.578-.777-.587l-.667-.012c-.23 0-.606.087-.923.433-.317.346-1.212 1.184-1.212 2.886 0 1.702 1.242 3.345 1.414 3.576.173.23 2.444 3.73 5.922 5.236.828.357 1.474.57 1.977.729.83.265 1.586.228 2.186.139.667-.099 2.043-.835 2.33-1.641.287-.807.287-1.499.202-1.641-.086-.143-.317-.23-.664-.404z"/>
-  </svg>
-</a>
-
-</body>
-
-</html>
+  <a href="https://wa.me/7907328522" target="_blank"
+     class="fixed bottom-24 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110 animate-bounce">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.002 2.005C8.823 2.005 2.998 7.829 2.998 15.007a12.87 12.87 0 001.705 6.49L2 30l8.79-2.318a12.93 12.93 0 005.212 1.095h.001c7.178 0 13.002-5.824 13.002-13.002s-5.824-13.002-13.002-13.002zm0 23.
