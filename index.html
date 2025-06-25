@@ -4,45 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Outline - IT Infrastructure Solutions</title>
+    <title>ZyranovAI - IT Infrastructure Solutions</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
 
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #c026d3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .glow {
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+        }
+
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-gradient-to-r from-blue-900 to-pink-900">
+    <nav class="bg-gradient-to-r from-blue-900 to-purple-900 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
 
             <!-- Logo & Brand -->
             <a href="#" class="flex items-center space-x-3 group">
                 <!-- Rotating Logo -->
                 <div
-                    class="w-12 h-12 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center transition-transform duration-700 group-hover:rotate-[360deg]">
-                    <img src="./Images/COM LOGO BG.png" alt="Logo" class="w-full h-full object-contain" />
+                    class="w-12 h-12 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center transition-transform duration-700 group-hover:rotate-[360deg] animate__animated animate__fadeInLeft">
+                    <img src="./Images/COM LOGO BG.png" alt="Logo" class="w-full h-full object-contain">
                 </div>
                 <!-- Brand Text -->
-                <span
-                    class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-400">
-                    CompanyOutline
+                <span class="text-2xl font-bold gradient-text animate__animated animate__fadeIn">
+                    ZyranovAI
                 </span>
             </a>
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex space-x-6 text-white">
-                <a href="#home" class="hover:text-red-500 transition-colors duration-300">Home</a>
-                <a href="#services" class="hover:text-red-500 transition-colors duration-300">Services</a>
-                <a href="#about" class="hover:text-red-500 transition-colors duration-300">About</a>
-                <a href="#portfolio" class="hover:text-red-500 transition-colors duration-300">Portfolio</a>
-                <a href="#contact" class="hover:text-red-500 transition-colors duration-300">Contact</a>
+                <a href="#home" class="hover:text-red-300 transition-colors duration-300 relative group">
+                    Home
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#services" class="hover:text-red-300 transition-colors duration-300 relative group">
+                    Services
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#about" class="hover:text-red-300 transition-colors duration-300 relative group">
+                    About
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#portfolio" class="hover:text-red-300 transition-colors duration-300 relative group">
+                    Portfolio
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="hover:text-red-300 transition-colors duration-300 relative group">
+                    Contact
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
 
             <!-- Hamburger Button -->
@@ -55,12 +126,17 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden flex-col space-y-4 px-4 py-4 bg-blue-800 text-white lg:hidden">
-            <a href="#home" class="hover:text-red-400 transition-colors duration-300">Home</a>
-            <a href="#services" class="hover:text-red-400 transition-colors duration-300">Services</a>
-            <a href="#about" class="hover:text-red-400 transition-colors duration-300">About</a>
-            <a href="#portfolio" class="hover:text-red-400 transition-colors duration-300">Portfolio</a>
-            <a href="#contact" class="hover:text-red-400 transition-colors duration-300">Contact</a>
+        <div id="mobile-menu"
+            class="hidden flex-col space-y-4 px-4 py-4 bg-blue-800 text-white lg:hidden animate__animated animate__fadeInDown">
+            <a href="#home"
+                class="hover:text-red-300 transition-colors duration-300 py-2 border-b border-blue-700">Home</a>
+            <a href="#services"
+                class="hover:text-red-300 transition-colors duration-300 py-2 border-b border-blue-700">Services</a>
+            <a href="#about"
+                class="hover:text-red-300 transition-colors duration-300 py-2 border-b border-blue-700">About</a>
+            <a href="#portfolio"
+                class="hover:text-red-300 transition-colors duration-300 py-2 border-b border-blue-700">Portfolio</a>
+            <a href="#contact" class="hover:text-red-300 transition-colors duration-300 py-2">Contact</a>
         </div>
     </nav>
 
@@ -70,365 +146,366 @@
 
         toggleBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('animate__fadeInDown');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.remove('shadow-xl');
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
         });
     </script>
 
-
-
-
     <!-- Hero Section -->
     <section id="home" class="hero-section pt-20 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-8 mb-lg-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800">Innovative <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Digital
-                            Solutions</span></h1>
-                    <p class="text-lg text-gray-600 mb-6">We craft cutting-edge software solutions to transform your
-                        business and enhance your digital presence.</p>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800 leading-tight">
+                        Innovative <span class="gradient-text">Digital Solutions</span> for Your Business
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">We craft cutting-edge software solutions to transform your
+                        business and enhance your digital presence with our expert team.</p>
                     <div class="flex flex-wrap gap-4">
                         <a href="#contact"
-                            class="btn btn-primary bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Get
-                            Started</a>
+                            class="btn-primary bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center">
+                            Get Started <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                         <a href="#services"
-                            class="btn btn-outline-primary border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-6 py-3 rounded-full shadow transition-all duration-300">Our
-                            Services</a>
+                            class="btn-outline border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full shadow transition-all duration-300 flex items-center">
+                            <i class="fas fa-eye mr-2"></i> Our Services
+                        </a>
+                    </div>
+                    <div class="mt-10 flex items-center space-x-6">
+                        <div class="flex items-center">
+                            <div class="flex -space-x-2">
+                                <img src="https://randomuser.me/api/portraits/women/12.jpg"
+                                    class="w-10 h-10 rounded-full border-2 border-white" alt="Client">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                                    class="w-10 h-10 rounded-full border-2 border-white" alt="Client">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                    class="w-10 h-10 rounded-full border-2 border-white" alt="Client">
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Trusted by <span
+                                        class="text-indigo-600 font-bold">100+</span> clients worldwide</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-image relative">
+                <div class="lg:w-1/2 animate__animated animate__fadeInRight">
+                    <div class="relative">
                         <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            alt="Software Development" class="rounded-xl shadow-2xl w-full h-auto">
-                        <div class="absolute -bottom-6 -right-6 bg-indigo-100 rounded-xl p-4 shadow-lg w-2/3 z-10">
-                            <h4 class="font-bold text-indigo-800 mb-2">Trusted by 100+ Clients</h4>
-                            <p class="text-sm text-gray-600">Across various industries worldwide</p>
+                            alt="Software Development" class="rounded-xl shadow-2xl w-full h-auto floating">
+                        <div
+                            class="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-lg w-2/3 z-10 hover-grow">
+                            <div class="flex items-center">
+                                <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-trophy text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-indigo-800 mb-1">Award Winning</h4>
+                                    <p class="text-sm text-gray-600">Best IT Solutions 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -top-6 -left-6 bg-white rounded-xl p-4 shadow-lg w-1/2 z-10 hover-grow hidden md:block">
+                            <div class="flex items-center">
+                                <div class="bg-purple-100 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-headset text-purple-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-purple-800 mb-1">24/7 Support</h4>
+                                    <p class="text-sm text-gray-600">Dedicated team</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="absolute top-0 left-0 w-full h-full -z-10 opacity-10">
-            <div class="absolute top-20 left-20 w-64 h-64 rounded-full bg-purple-400 blur-3xl"></div>
-            <div class="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-indigo-400 blur-3xl"></div>
+            <div class="absolute top-20 left-20 w-64 h-64 rounded-full bg-purple-400 blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-indigo-400 blur-3xl animate-pulse"></div>
         </div>
     </section>
 
     <!-- Clients Section -->
-    <section class="py-8 bg-gray-100">
+    <section class="py-12 bg-gray-100">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
-                <h3 class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Trusted by industry leaders
-                </h3>
+            <div class="text-center mb-10">
+                <h3 class="text-sm font-semibold text-indigo-600 uppercase tracking-wider mb-2">Trusted by industry
+                    leaders</h3>
+                <h2 class="text-3xl font-bold text-gray-800">Our Valued Partners</h2>
             </div>
 
             <div class="relative">
-                <!-- Client Logos Container -->
-                <div class="flex overflow-x-hidden py-4">
-                    <div class="flex transition-transform duration-300" id="client-carousel">
-                        <!-- Logo Items -->
-                        <div class="flex-shrink-0 px-4">
-                            <img src="./Images/AR Collection.jpg" alt="Client Logo"
-                                class="w-32 h-32 rounded-full object-cover shadow-lg hover:scale-105 hover:shadow-xl">
-                        </div>
-                        <div class="flex-shrink-0 px-4">
-                            <img src="./Images/Zyncrypt.jpg" alt="Client Logo"
-                                class="w-32 h-32 rounded-full object-cover shadow-lg hover:scale-105 hover:shadow-xl">
-                        </div>
-                        <div class="flex-shrink-0 px-4">
-                            <img src="./Images/Cozy Nest Homes.png" alt="Client Logo"
-                                class="w-32 h-32 rounded-full object-cover shadow-lg hover:scale-105 hover:shadow-xl">
-                        </div>
-                        <div class="flex-shrink-0 px-4">
-                            <img src="./Images/Thread Tech Junction.png" alt="Client Logo"
-                                class="w-32 h-32 rounded-full object-cover shadow-lg hover:scale-105 hover:shadow-xl">
-                        </div>
-                        <div class="flex-shrink-0 px-4">
-                            <img src="./Images/AdornHerElegance.png" alt="Client Logo"
-                                class="w-32 h-32 rounded-full object-cover shadow-lg hover:scale-105 hover:shadow-xl">
-                        </div>
+                <div class="flex flex-wrap justify-center gap-8 lg:gap-12">
+                    <div class="client-logo hover-grow">
+                        <img src="./Images/AR Collection.jpg" alt="Client Logo"
+                            class="w-32 h-32 rounded-full object-cover shadow-lg hover:shadow-xl border-4 border-white">
+                    </div>
+                    <div class="client-logo hover-grow">
+                        <img src="./Images/Zyncrypt.jpg" alt="Client Logo"
+                            class="w-32 h-32 rounded-full object-cover shadow-lg hover:shadow-xl border-4 border-white">
+                    </div>
+                    <div class="client-logo hover-grow">
+                        <img src="./Images/Cozy Nest Homes.png" alt="Client Logo"
+                            class="w-32 h-32 rounded-full object-cover shadow-lg hover:shadow-xl border-4 border-white">
+                    </div>
+                    <div class="client-logo hover-grow">
+                        <img src="./Images/Thread Tech Junction.png" alt="Client Logo"
+                            class="w-32 h-32 rounded-full object-cover shadow-lg hover:shadow-xl border-4 border-white">
+                    </div>
+                    <div class="client-logo hover-grow">
+                        <img src="./Images/AdornHerElegance.png" alt="Client Logo"
+                            class="w-32 h-32 rounded-full object-cover shadow-lg hover:shadow-xl border-4 border-white">
                     </div>
                 </div>
-
-                <!-- Navigation Arrows -->
-                <button id="client-prev"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 hidden sm:block lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <button id="client-next"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 hidden sm:block lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
             </div>
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.getElementById('client-carousel');
-            const prevBtn = document.getElementById('client-prev');
-            const nextBtn = document.getElementById('client-next');
-            const logos = carousel.querySelectorAll('div');
-
-            if (!carousel || !logos.length) return;
-
-            let currentIndex = 0;
-            let visibleLogos = 5; // Default for large screens
-            const logoWidth = 160; // w-32 (128px) + px-4 (32px) = ~160px
-
-            function updateCarousel() {
-                const isLargeScreen = window.innerWidth >= 1024; // lg breakpoint
-
-                if (isLargeScreen) {
-                    // Full width layout for laptops/desktops
-                    carousel.style.transform = 'translateX(0)';
-                    carousel.classList.add('w-full', 'justify-between');
-                    carousel.classList.remove('w-auto');
-                    prevBtn.classList.add('hidden');
-                    nextBtn.classList.add('hidden');
-                    visibleLogos = 5;
-                } else {
-                    // Carousel layout for tablets/mobiles
-                    carousel.classList.remove('w-full', 'justify-between');
-                    carousel.classList.add('w-auto');
-                    prevBtn.classList.remove('hidden');
-                    nextBtn.classList.remove('hidden');
-                    visibleLogos = 2;
-                    updatePosition();
-                }
-            }
-
-            function updatePosition() {
-                carousel.style.transform = `translateX(${-currentIndex * logoWidth}px)`;
-
-                // Disable buttons when at boundaries
-                prevBtn.disabled = currentIndex === 0;
-                nextBtn.disabled = currentIndex >= logos.length - visibleLogos;
-            }
-
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updatePosition();
-                }
-            });
-
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex < logos.length - visibleLogos) {
-                    currentIndex++;
-                    updatePosition();
-                }
-            });
-
-            // Initialize and handle resize
-            updateCarousel();
-            window.addEventListener('resize', updateCarousel);
-        });
-    </script>
-
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-r from-indigo-700 to-purple-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="stat-item p-6 rounded-xl bg-white bg-opacity-10 backdrop-blur-sm hover-grow">
+                    <div class="text-4xl font-bold mb-2 animate-count" data-target="150">0</div>
+                    <div class="text-lg font-medium">Projects Completed</div>
+                </div>
+                <div class="stat-item p-6 rounded-xl bg-white bg-opacity-10 backdrop-blur-sm hover-grow">
+                    <div class="text-4xl font-bold mb-2 animate-count" data-target="50">0</div>
+                    <div class="text-lg font-medium">Happy Clients</div>
+                </div>
+                <div class="stat-item p-6 rounded-xl bg-white bg-opacity-10 backdrop-blur-sm hover-grow">
+                    <div class="text-4xl font-bold mb-2 animate-count" data-target="15">0</div>
+                    <div class="text-lg font-medium">Team Members</div>
+                </div>
+                <div class="stat-item p-6 rounded-xl bg-white bg-opacity-10 backdrop-blur-sm hover-grow">
+                    <div class="text-4xl font-bold mb-2 animate-count" data-target="5">0</div>
+                    <div class="text-lg font-medium">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 bg-white">
-        <div class="container">
-            <div class="text-center mb-12">
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
                 <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Our Services</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Comprehensive IT Solutions</h2>
-                <p class="max-w-2xl mx-auto text-gray-600 mt-4">We offer end-to-end digital solutions to help your
-                    business thrive in the digital landscape.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">Comprehensive IT Solutions</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">We offer end-to-end digital solutions to help your business
+                    thrive in the digital landscape.</p>
             </div>
 
-            <div class="row g-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <a href="./Custom Software Development.html">
+                <a href="./Custom Software Development.html" class="service-card hover-grow">
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-indigo-500 h-full flex flex-col">
                         <div
-                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-indigo-500 h-full">
-                            <div
-                                class="icon-box w-14 h-14 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
-                                <i class="fas fa-code text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Custom Software Development</h3>
-                            <p class="text-gray-600">Tailored software solutions designed to meet your specific business
-                                requirements and streamline operations.</p>
+                            class="icon-box w-16 h-16 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-code text-3xl"></i>
                         </div>
-                    </a>
-                </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Custom Software Development</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Tailored software solutions designed to meet your
+                            specific business requirements and streamline operations.</p>
+                        <div class="text-indigo-600 font-medium flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- Service 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <a href="./Android App Development Website.html">
+                <a href="./Android App Development Website.html" class="service-card hover-grow">
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-purple-500 h-full flex flex-col">
                         <div
-                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-purple-500 h-full">
-                            <div
-                                class="icon-box w-14 h-14 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
-                                <i class="fab fa-android text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Android App Development</h3>
-                            <p class="text-gray-600">High-performance mobile applications built with cutting-edge
-                                technologies for seamless user experiences.</p>
+                            class="icon-box w-16 h-16 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-6">
+                            <i class="fab fa-android text-3xl"></i>
                         </div>
-                    </a>
-                </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Android App Development</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">High-performance mobile applications built with
+                            cutting-edge technologies for seamless user experiences.</p>
+                        <div class="text-purple-600 font-medium flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- Service 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <a href="./Web Applications Website.html">
+                <a href="./Web Applications Website.html" class="service-card hover-grow">
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-blue-500 h-full flex flex-col">
                         <div
-                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-blue-500 h-full">
-                            <div
-                                class="icon-box w-14 h-14 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                                <i class="fas fa-globe text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Web Applications</h3>
-                            <p class="text-gray-600">Scalable and secure web applications that drive engagement and
-                                deliver
-                                measurable results.</p>
+                            class="icon-box w-16 h-16 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-globe text-3xl"></i>
                         </div>
-                    </a>
-                </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Web Applications</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Scalable and secure web applications that drive
+                            engagement and deliver measurable results.</p>
+                        <div class="text-blue-600 font-medium flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- Service 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <a href="./UX Design Website.html">
+                <a href="./UX Design Website.html" class="service-card hover-grow">
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-pink-500 h-full flex flex-col">
                         <div
-                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-pink-500 h-full">
-                            <div
-                                class="icon-box w-14 h-14 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
-                                <i class="fas fa-paint-brush text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">UI/UX Design</h3>
-                            <p class="text-gray-600">User-centric designs that enhance usability and create memorable
-                                digital experiences.</p>
+                            class="icon-box w-16 h-16 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-paint-brush text-3xl"></i>
                         </div>
-                    </a>
-                </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">UI/UX Design</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">User-centric designs that enhance usability and create
+                            memorable digital experiences.</p>
+                        <div class="text-pink-600 font-medium flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- Service 5 -->
-                <div class="col-md-6 col-lg-4">
-                    <a href="./SEO & Digital Marketing Website.html">
+                <a href="./SEO & Digital Marketing Website.html" class="service-card hover-grow">
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-green-500 h-full flex flex-col">
                         <div
-                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-green-500 h-full">
-                            <div
-                                class="icon-box w-14 h-14 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
-                                <i class="fas fa-search-dollar text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">SEO & Digital Marketing</h3>
-                            <p class="text-gray-600">Data-driven strategies to increase your online visibility and drive
-                                qualified traffic to your business.</p>
+                            class="icon-box w-16 h-16 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-search-dollar text-3xl"></i>
                         </div>
-                    </a>
-                </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">SEO & Digital Marketing</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Data-driven strategies to increase your online
+                            visibility and drive qualified traffic to your business.</p>
+                        <div class="text-green-600 font-medium flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- Service 6 -->
-                <div class="col-md-6 col-lg-4">
-                    <a href="./Cybersecurity Website.html">
+                <a href="./Cybersecurity Website.html" class="service-card hover-grow">
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-red-500 h-full flex flex-col">
                         <div
-                            class="service-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-red-500 h-full">
-                            <div
-                                class="icon-box w-14 h-14 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
-                                <i class="fas fa-shield-alt text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Cybersecurity</h3>
-                            <p class="text-gray-600">Comprehensive security solutions to protect your digital assets
-                                from
-                                evolving threats.</p>
+                            class="icon-box w-16 h-16 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-shield-alt text-3xl"></i>
                         </div>
-                    </a>
-                </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Cybersecurity</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Comprehensive security solutions to protect your digital
+                            assets from evolving threats.</p>
+                        <div class="text-red-600 font-medium flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
 
-            <div class="text-center mt-10">
+            <div class="text-center mt-16">
                 <a href="#contact"
-                    class="btn btn-outline-primary border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full shadow transition-all duration-300">Get
-                    All Services</a>
+                    class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-paper-plane mr-2"></i> Get All Services
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-50">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-8 mb-lg-0">
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
                     <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">About Us</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">Your Trusted IT Solutions Partner
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-6">Your Trusted IT Solutions Partner
                     </h2>
-                    <p class="text-gray-600 mb-4">Headquartered in Kochi, Company Outline is a leading IT infrastructure
+                    <p class="text-gray-600 mb-6">Headquartered in Kochi, Company Outline is a leading IT infrastructure
                         solutions provider, specializing in a wide range of services to enhance your digital experience.
                     </p>
-                    <p class="text-gray-600 mb-6">We are committed to understanding the evolving needs of our clients
+                    <p class="text-gray-600 mb-8">We are committed to understanding the evolving needs of our clients
                         and delivering innovative, user-centric, and accessible technology solutions that drive business
                         growth.</p>
 
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-3">
-                                    <h4 class="font-semibold text-gray-800">Expert Team</h4>
-                                    <p class="text-gray-600 text-sm">Certified professionals with industry expertise</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    <i class="fas fa-check"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-3">
-                                    <h4 class="font-semibold text-gray-800">Quality Assurance</h4>
-                                    <p class="text-gray-600 text-sm">Rigorous testing for flawless performance</p>
-                                </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Expert Team</h4>
+                                <p class="text-gray-600 text-sm">Certified professionals with industry expertise</p>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-3">
-                                    <h4 class="font-semibold text-gray-800">Support 24/7</h4>
-                                    <p class="text-gray-600 text-sm">Round-the-clock technical support</p>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    <i class="fas fa-check"></i>
                                 </div>
                             </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Quality Assurance</h4>
+                                <p class="text-gray-600 text-sm">Rigorous testing for flawless performance</p>
+                            </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
-                                        <i class="fas fa-check"></i>
-                                    </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    <i class="fas fa-check"></i>
                                 </div>
-                                <div class="ml-3">
-                                    <h4 class="font-semibold text-gray-800">Competitive Pricing</h4>
-                                    <p class="text-gray-600 text-sm">Cost-effective solutions without compromise</p>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Support 24/7</h4>
+                                <p class="text-gray-600 text-sm">Round-the-clock technical support</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    <i class="fas fa-check"></i>
                                 </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Competitive Pricing</h4>
+                                <p class="text-gray-600 text-sm">Cost-effective solutions without compromise</p>
                             </div>
                         </div>
                     </div>
+
+                    <a href="#contact"
+                        class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 transition-colors duration-300">
+                        Contact Us <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
-                <div class="col-lg-6">
-                    <div class="about-image relative">
+                <div class="lg:w-1/2 relative">
+                    <div class="relative">
                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                             alt="Our Team" class="rounded-xl shadow-lg w-full">
-                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg w-2/3 z-10">
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg w-2/3 z-10 hover-grow hidden md:block">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0 bg-indigo-100 rounded-lg p-3">
                                     <i class="fas fa-award text-indigo-600 text-2xl"></i>
@@ -439,6 +516,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="absolute -top-6 -right-6 bg-white p-6 rounded-xl shadow-lg w-1/2 z-10 hover-grow">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-purple-100 rounded-lg p-3">
+                                    <i class="fas fa-users text-purple-600 text-2xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-800">15+ Experts</h4>
+                                    <p class="text-sm text-gray-600">Dedicated team</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -446,204 +534,218 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 bg-white">
-        <div class="container">
-            <div class="text-center mb-12">
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
                 <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Our Work</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Featured Projects</h2>
-                <p class="max-w-2xl mx-auto text-gray-600 mt-4">Explore some of our successful projects across various
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">Featured Projects</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Explore some of our successful projects across various
                     industries.</p>
             </div>
 
-            <div class="row g-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div
-                        class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="portfolio-image relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                alt="Project 1"
-                                class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-                            <div
-                                class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <div>
-                                    <h3 class="text-white font-bold text-xl mb-2">E-commerce Platform</h3>
-                                    <p class="text-indigo-200">Custom-built online store with advanced features</p>
-                                    <a href="#"
-                                        class="mt-3 inline-flex items-center text-white hover:text-indigo-300 transition-colors">
-                                        View Project <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
+                <div
+                    class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover-grow">
+                    <div class="portfolio-image relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Project 1"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div
+                            class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-bold text-xl mb-2">E-commerce Platform</h3>
+                                <p class="text-indigo-200 mb-4">Custom-built online store with advanced features</p>
+                                <a href="#"
+                                    class="inline-flex items-center text-white hover:text-indigo-300 transition-colors">
+                                    View Project <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-indigo-600">E-commerce</span>
+                            <span class="text-sm text-gray-500">2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">ShopEasy Platform</h3>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div
-                        class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="portfolio-image relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80"
-                                alt="Project 2"
-                                class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-                            <div
-                                class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <div>
-                                    <h3 class="text-white font-bold text-xl mb-2">Financial Analytics Dashboard</h3>
-                                    <p class="text-indigo-200">Real-time data visualization for financial institutions
-                                    </p>
-                                    <a href="#"
-                                        class="mt-3 inline-flex items-center text-white hover:text-indigo-300 transition-colors">
-                                        View Project <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
+                <div
+                    class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover-grow">
+                    <div class="portfolio-image relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80"
+                            alt="Project 2"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div
+                            class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-bold text-xl mb-2">Financial Analytics Dashboard</h3>
+                                <p class="text-indigo-200 mb-4">Real-time data visualization for financial institutions
+                                </p>
+                                <a href="#"
+                                    class="inline-flex items-center text-white hover:text-indigo-300 transition-colors">
+                                    View Project <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-indigo-600">Finance</span>
+                            <span class="text-sm text-gray-500">2022</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">FinTrack Analytics</h3>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div
-                        class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="portfolio-image relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80"
-                                alt="Project 3"
-                                class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-                            <div
-                                class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <div>
-                                    <h3 class="text-white font-bold text-xl mb-2">Healthcare Management System</h3>
-                                    <p class="text-indigo-200">Comprehensive solution for hospital administration</p>
-                                    <a href="#"
-                                        class="mt-3 inline-flex items-center text-white hover:text-indigo-300 transition-colors">
-                                        View Project <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
+                <div
+                    class="portfolio-card overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover-grow">
+                    <div class="portfolio-image relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80"
+                            alt="Project 3"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div
+                            class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-indigo-900 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-bold text-xl mb-2">Healthcare Management System</h3>
+                                <p class="text-indigo-200 mb-4">Comprehensive solution for hospital administration</p>
+                                <a href="#"
+                                    class="inline-flex items-center text-white hover:text-indigo-300 transition-colors">
+                                    View Project <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-indigo-600">Healthcare</span>
+                            <span class="text-sm text-gray-500">2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">MediCare System</h3>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-10">
+            <div class="text-center mt-16">
                 <a href="#"
-                    class="btn btn-outline-primary border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full shadow transition-all duration-300">View
-                    All Projects</a>
+                    class="inline-flex items-center px-8 py-3 border border-indigo-600 text-indigo-600 font-medium rounded-full shadow hover:bg-indigo-600 hover:text-white transition-colors duration-300">
+                    <i class="fas fa-folder-open mr-2"></i> View All Projects
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-16 bg-gradient-to-r from-indigo-900 to-purple-800 text-white">
-        <div class="container">
-            <div class="text-center mb-12">
-                <span class="text-sm font-semibold text-indigo-300 uppercase tracking-wider">Testimonials</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">What Our Clients Say</h2>
-            </div>
+    <section class="py-20 bg-gradient-to-r from-indigo-900 to-purple-800 text-white parallax"
+        style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+        <div class="bg-indigo-900 bg-opacity-80">
+            <div class="container mx-auto px-4 py-20">
+                <div class="text-center mb-16">
+                    <span class="text-sm font-semibold text-indigo-300 uppercase tracking-wider">Testimonials</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">What Our Clients Say</h2>
+                </div>
 
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <!-- Testimonial 1 -->
-                            <div class="carousel-item active">
-                                <div class="testimonial-item text-center px-4 py-8">
-                                    <div
-                                        class="testimonial-content bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
-                                        <div class="quote-icon text-indigo-300 text-4xl mb-6">
-                                            <i class="fas fa-quote-left"></i>
-                                        </div>
-                                        <p class="text-lg text-white mb-6">"Company Outline transformed our digital
-                                            presence with their exceptional web development and SEO services. Our online
-                                            traffic increased by 300% within just three months of working with them."
-                                        </p>
-                                        <div class="client-info">
-                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client"
-                                                class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-indigo-300">
-                                            <h4 class="font-bold text-white">Rajesh Kumar</h4>
-                                            <p class="text-indigo-200">CEO, TechSolutions India</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Testimonial 2 -->
-                            <div class="carousel-item">
-                                <div class="testimonial-item text-center px-4 py-8">
-                                    <div
-                                        class="testimonial-content bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
-                                        <div class="quote-icon text-indigo-300 text-4xl mb-6">
-                                            <i class="fas fa-quote-left"></i>
-                                        </div>
-                                        <p class="text-lg text-white mb-6">"The custom software solution developed by
-                                            Company Outline has streamlined our operations significantly. Their team
-                                            understood our requirements perfectly and delivered beyond expectations."
-                                        </p>
-                                        <div class="client-info">
-                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client"
-                                                class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-indigo-300">
-                                            <h4 class="font-bold text-white">Priya Nair</h4>
-                                            <p class="text-indigo-200">Director, RetailChain</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Testimonial 3 -->
-                            <div class="carousel-item">
-                                <div class="testimonial-item text-center px-4 py-8">
-                                    <div
-                                        class="testimonial-content bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8">
-                                        <div class="quote-icon text-indigo-300 text-4xl mb-6">
-                                            <i class="fas fa-quote-left"></i>
-                                        </div>
-                                        <p class="text-lg text-white mb-6">"Their cybersecurity team implemented robust
-                                            protection measures for our financial platform. We've had zero security
-                                            breaches since deployment, giving us and our customers peace of mind."</p>
-                                        <div class="client-info">
-                                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client"
-                                                class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-indigo-300">
-                                            <h4 class="font-bold text-white">Arun Menon</h4>
-                                            <p class="text-indigo-200">CTO, FinSecure</p>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div
+                        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 hover-glow transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client"
+                                class="w-16 h-16 rounded-full border-2 border-indigo-300">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-white">Rajesh Kumar</h4>
+                                <p class="text-indigo-200">CEO, TechSolutions India</p>
                             </div>
                         </div>
+                        <div class="text-lg text-white mb-6">
+                            <i class="fas fa-quote-left text-indigo-300 mr-2"></i>
+                            Company Outline transformed our digital presence with their exceptional web development and
+                            SEO services. Our online traffic increased by 300% within just three months.
+                            <i class="fas fa-quote-right text-indigo-300 ml-2"></i>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                    <!-- Testimonial 2 -->
+                    <div
+                        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 hover-glow transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client"
+                                class="w-16 h-16 rounded-full border-2 border-indigo-300">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-white">Priya Nair</h4>
+                                <p class="text-indigo-200">Director, RetailChain</p>
+                            </div>
+                        </div>
+                        <div class="text-lg text-white mb-6">
+                            <i class="fas fa-quote-left text-indigo-300 mr-2"></i>
+                            The custom software solution developed by Company Outline has streamlined our operations
+                            significantly. Their team understood our requirements perfectly.
+                            <i class="fas fa-quote-right text-indigo-300 ml-2"></i>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div
+                        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 hover-glow transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client"
+                                class="w-16 h-16 rounded-full border-2 border-indigo-300">
+                            <div class="ml-4">
+                                <h4 class="font-bold text-white">Arun Menon</h4>
+                                <p class="text-indigo-200">CTO, FinSecure</p>
+                            </div>
+                        </div>
+                        <div class="text-lg text-white mb-6">
+                            <i class="fas fa-quote-left text-indigo-300 mr-2"></i>
+                            Their cybersecurity team implemented robust protection measures for our financial platform.
+                            We've had zero security breaches since deployment.
+                            <i class="fas fa-quote-right text-indigo-300 ml-2"></i>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-8 mb-lg-0">
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
                     <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Contact Us</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">Get In Touch</h2>
-                    <p class="text-gray-600 mb-6">Have a project in mind or want to learn more about our services? Reach
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">Have a project in mind or want to learn more about our services? Reach
                         out to us and our team will get back to you promptly.</p>
 
-                    <div class="space-y-4">
+                    <div class="space-y-6">
                         <div class="flex items-start">
                             <div class="flex-shrink-0 mt-1">
                                 <div
-                                    class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                             </div>
@@ -656,7 +758,7 @@
                         <div class="flex items-start">
                             <div class="flex-shrink-0 mt-1">
                                 <div
-                                    class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                             </div>
@@ -669,7 +771,7 @@
                         <div class="flex items-start">
                             <div class="flex-shrink-0 mt-1">
                                 <div
-                                    class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                             </div>
@@ -680,60 +782,64 @@
                         </div>
                     </div>
 
-                    <div class="mt-8">
+                    <div class="mt-10">
                         <h4 class="font-semibold text-gray-800 mb-4">Follow Us</h4>
                         <div class="flex space-x-4">
                             <a href="#"
-                                class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             <a href="#"
-                                class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
                                 <i class="fab fa-twitter"></i>
                             </a>
                             <a href="#"
-                                class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                             <a href="#"
-                                class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
                         <h3 class="text-xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
                         <form>
-                            <div class="mb-4">
-                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-                                <input type="text" id="name"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                                    placeholder="Enter your name">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                    <input type="text" id="name"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
+                                        placeholder="Enter your name">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email
+                                        Address</label>
+                                    <input type="email" id="email"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
+                                        placeholder="Enter your email">
+                                </div>
                             </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                                <input type="email" id="email"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                                    placeholder="Enter your email">
-                            </div>
-                            <div class="mb-4">
+                            <div class="mb-6">
                                 <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
                                 <input type="text" id="subject"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
                                     placeholder="What's this about?">
                             </div>
                             <div class="mb-6">
                                 <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
                                 <textarea id="message" rows="5"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
                                     placeholder="Tell us about your project"></textarea>
                             </div>
                             <button type="submit"
-                                class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">Send
-                                Message</button>
+                                class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium py-4 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-[1.02]">
+                                Send Message
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -741,15 +847,33 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="max-w-2xl mx-auto text-xl text-blue-100 mb-10">Let's discuss how our IT solutions can help you
+                achieve your business goals</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact"
+                    class="bg-white text-indigo-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                    Get Started Now
+                </a>
+                <a href="tel:+919526396523"
+                    class="border-2 border-white text-white hover:bg-white hover:text-indigo-700 font-bold py-4 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-phone mr-2"></i> Call Us Today
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-12 pb-6">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-8 mb-lg-0">
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
                     <a href="#"
-                        class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300 mb-4 inline-block">Company<span
-                            class="text-white">Outline</span></a>
-                    <p class="text-gray-400 mb-4">Leading IT infrastructure solutions provider headquartered in Kochi,
+                        class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300 mb-4 inline-block">CompanyOutline</a>
+                    <p class="text-gray-400 mb-6">Leading IT infrastructure solutions provider headquartered in Kochi,
                         delivering innovative technology solutions to enhance your digital experience.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
@@ -766,3 +890,118 @@
                         </a>
                     </div>
                 </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Custom Software
+                                Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Android App
+                                Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Applications</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">SEO & Digital
+                                Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a>
+                        </li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+                        </li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email"
+                            class="px-4 py-3 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Company Outline. All rights reserved. Designed with ❤️ in Kochi, India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animation for counting numbers
+        const animateCount = (element) => {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const frameDuration = 1000 / 60;
+            const totalFrames = Math.round(duration / frameDuration);
+            let frame = 0;
+
+            const counter = setInterval(() => {
+                frame++;
+                const progress = frame / totalFrames;
+                const currentValue = Math.round(target * progress);
+
+                element.textContent = currentValue;
+
+                if (frame === totalFrames) {
+                    clearInterval(counter);
+                }
+            }, frameDuration);
+        };
+
+        // Initialize count animation when element is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCount(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.animate-count').forEach(counter => {
+            observer.observe(counter);
+        });
+    </script>
+</body>
+
+</html>
